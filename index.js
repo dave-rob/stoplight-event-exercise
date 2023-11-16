@@ -1,4 +1,4 @@
-// Stoplight exercise part 1
+//                                    PART 1
 
 // button variables
 let stopButton = document.getElementById("stopButton")
@@ -22,6 +22,28 @@ slowButton.addEventListener('click', function (){
 goButton.addEventListener('click', function (){
   lightFunction("goLight", "go")
 });
+
+//                                  PART 2
+
+// function printing entered button to the console
+var mouseEnter = function(event){
+  console.log(`Entered ${event.target.textContent} button`)
+}
+
+// function printing left button to the console
+var mouseLeft = function(event){
+  console.log(`Left ${event.target.textContent} button`)
+}
+
+// creating event listeners using functions made above
+slowButton.addEventListener('mouseenter', mouseEnter)
+slowButton.addEventListener('mouseleave', mouseLeft)
+
+goButton.addEventListener('mouseenter', mouseEnter)
+goButton.addEventListener('mouseleave', mouseLeft)
+
+stopButton.addEventListener('mouseenter', mouseEnter)
+stopButton.addEventListener('mouseleave', mouseLeft)
 
 
 
