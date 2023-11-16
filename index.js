@@ -36,14 +36,11 @@ var mouseLeft = function(event){
 }
 
 // creating event listeners using functions made above
-slowButton.addEventListener('mouseenter', mouseEnter)
-slowButton.addEventListener('mouseleave', mouseLeft)
-
-goButton.addEventListener('mouseenter', mouseEnter)
-goButton.addEventListener('mouseleave', mouseLeft)
-
-stopButton.addEventListener('mouseenter', mouseEnter)
-stopButton.addEventListener('mouseleave', mouseLeft)
+var buttonArr = [stopButton, slowButton, goButton];
+buttonArr.forEach((element) => {
+  element.addEventListener('mouseenter', mouseEnter)
+  element.addEventListener('mouseleave', mouseLeft)
+});
 
 
 
