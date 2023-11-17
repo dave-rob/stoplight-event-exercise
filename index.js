@@ -19,11 +19,11 @@ var isStopOn = false;
 
 // function calling lightFunction and printing which bulb is on to the console
 var mouseClick = function(event){
-  window[`is${event.target.textContent.toLowerCase()}On`] = !window[`is${event.target.textContent.toLowerCase()}On`];
-  window[`is${event.target.textContent.toLowerCase()}On`] ? console.log(`${event.target.textContent} bulb on`) : console.log(`${event.target.textContent} bulb off`);
-  lightFunction(`${event.target.textContent.toLowerCase()}Light`, event.target.textContent.toLowerCase());
+  var light = event.target.textContent;
+  window[`is${light}On`] = !window[`is${light}On`];
+  window[`is${light}On`] ? console.log(`${light} bulb on`) : console.log(`${light} bulb off`);
+  lightFunction(`${light.toLowerCase()}Light`, light.toLowerCase());
 }
-
 
 // Creating an event listener for each button 
 stopButton.addEventListener('click', mouseClick);
